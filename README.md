@@ -36,16 +36,15 @@ Menyimpan data *DreamGoal* baru ke database.
   }
 Response:
 Success (200):
-json
-Salin kode
+```json
 {
     "message": "Data saved successfully",
     "id": "generated_goal_id",
     "imageURL": "https://storage.googleapis.com/<bucket_name>/<file_path>"
 }
+
 Error (400/500):
-json
-Salin kode
+```json
 {
     "error": "Failed to save data",
     "details": "Error details"
