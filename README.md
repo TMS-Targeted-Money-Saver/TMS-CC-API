@@ -36,34 +36,36 @@ Menyimpan data *DreamGoal* baru ke database.
   }
 Response:
 Success (200):
-```json
+```
 {
     "message": "Data saved successfully",
     "id": "generated_goal_id",
     "imageURL": "https://storage.googleapis.com/<bucket_name>/<file_path>"
 }
-
+```
+Response:
 Error (400/500):
-```json
+```
 {
     "error": "Failed to save data",
     "details": "Error details"
 }
-2. Get Dream Goals
-Mengambil semua data DreamGoal milik pengguna tertentu.
+```
 
-URL:
-GET /dreamGoals
+### 2. **Get Dream Goals**
+Mengambil semua data *DreamGoal* milik pengguna tertentu.
 
-Headers:
+-**URL:**
+`GET /dreamGoals`
 
-Key	Value
-Authorization	Bearer <JWT_TOKEN>
+- **Headers:**  
+  | Key             | Value             |
+  |------------------|-------------------|
+  | Authorization    | Bearer `<JWT_TOKEN>` |
+
 Response:
-
 Success (200):
-json
-Salin kode
+```
 {
     "message": "Dream goals fetched successfully",
     "data": [
@@ -87,13 +89,16 @@ Salin kode
         }
     ]
 }
+```
 Error (404/500):
-json
+```
 Salin kode
 {
     "error": "Failed to fetch dream goals",
     "details": "Error details"
 }
+```
+
 3. Update Savings
 Memperbarui jumlah tabungan dan menghitung ulang status progres DreamGoal.
 
