@@ -5,10 +5,7 @@
 API untuk mengelola data *DreamGoal* pengguna, termasuk menyimpan, membaca, memperbarui, dan menghapus data tabungan.
 
 ## Base URL
-https://<your-domain>/api/v1
-
-mathematica
-Salin kode
+https://targetted-money-saver.et.r.appspot.com/api
 
 ## Endpoints
 
