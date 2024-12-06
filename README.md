@@ -55,7 +55,7 @@ Error (400/500):
 ### 2. **Get Dream Goals**
 Mengambil semua data *DreamGoal* milik pengguna tertentu.
 
--**URL:**
+- **URL:**
 `GET /getDreamProduct`
 
 - **Headers:**  
@@ -102,7 +102,7 @@ Salin kode
 ### 3. **Update Savings**
 Memperbarui jumlah tabungan dan menghitung ulang status progres *DreamGoal*.
 
-URL:
+- **URL:**
 `PATCH /updateSavings`
 
 - **Headers:**  
@@ -139,7 +139,7 @@ Error (400/404/500):
 ### 4. **Delete Dream Goal**
 Menghapus *DreamGoal* berdasarkan ID.
 
-### URL:
+- **URL:**
 `DELETE /deleteDreamProduct`
 
 - **Headers:**  
