@@ -30,8 +30,8 @@ Menyimpan data *DreamGoal* baru ke database.
       "goal_category": "Category of the goal",
       "goal_period": 30,
       "goal_date_started": "2024-12-06",
-      "amount_saved": 0,
-      "days_saved": 0,
+      "amount_saved": 0, // Default input 0 You can skip this
+      "days_saved": 0,  // Default input 0 You can skip this
       "daily_save": 5000
   }
 Response:
@@ -156,6 +156,7 @@ Response:
 
 Success (200):
 ```
+{
     "message": "Dream goal deleted successfully"
 }
 ```
