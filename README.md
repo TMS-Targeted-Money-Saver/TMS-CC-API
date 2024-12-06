@@ -169,8 +169,10 @@ Error (404/500):
 ```
 Error Codes
 Code	Description
+```
 200	Success
 400	Bad Request (missing fields)
 401	Unauthorized (missing/invalid token)
 404	Not Found
 500	Internal Server Error
+```
