@@ -99,28 +99,26 @@ Salin kode
 }
 ```
 
-3. Update Savings
-Memperbarui jumlah tabungan dan menghitung ulang status progres DreamGoal.
+### 3. **Update Savings**
+Memperbarui jumlah tabungan dan menghitung ulang status progres *DreamGoal*.
 
 URL:
-PUT /dreamGoals/updateSavings
+`PATCH /updateSavings`
 
-Headers:
+- **Headers:**  
+  | Key             | Value             |
+  |------------------|-------------------|
+  | Authorization    | Bearer `<JWT_TOKEN>` |
 
-Key	Value
-Authorization	Bearer <JWT_TOKEN>
-Request Body:
 
-json
-Salin kode
+```
 {
     "goalId": "goal_id"
 }
+```
 Response:
-
 Success (200):
-json
-Salin kode
+```
 {
     "message": "Savings updated successfully",
     "data": {
@@ -130,45 +128,44 @@ Salin kode
         "daily_save": 5000
     }
 }
+```
 Error (400/404/500):
-json
-Salin kode
+```
 {
     "error": "Failed to update savings",
     "details": "Error details"
 }
-4. Delete Dream Goal
-Menghapus DreamGoal berdasarkan ID.
+```
+### 4. **Delete Dream Goal**
+Menghapus *DreamGoal* berdasarkan ID.
 
-URL:
-DELETE /dreamGoals
+### URL:
+`DELETE /deleteDreamProduct`
 
-Headers:
+- **Headers:**  
+  | Key             | Value             |
+  |------------------|-------------------|
+  | Authorization    | Bearer `<JWT_TOKEN>` |
 
-Key	Value
-Authorization	Bearer <JWT_TOKEN>
-Request Body:
-
-json
-Salin kode
+```
 {
     "goalId": "goal_id"
 }
+```
 Response:
 
 Success (200):
-json
-Salin kode
-{
+```
     "message": "Dream goal deleted successfully"
 }
+```
 Error (404/500):
-json
-Salin kode
+```
 {
     "error": "Failed to delete dream goal",
     "details": "Error details"
 }
+```
 Error Codes
 Code	Description
 200	Success
