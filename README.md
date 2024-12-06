@@ -13,7 +13,7 @@ https://targetted-money-saver.et.r.appspot.com/api
 Menyimpan data *DreamGoal* baru ke database.
 
 - **URL:**  
-  `POST /dreamGoals`
+  `POST /addDreamProduct`
 
 - **Headers:**  
   | Key             | Value             |
@@ -56,7 +56,7 @@ Error (400/500):
 Mengambil semua data *DreamGoal* milik pengguna tertentu.
 
 -**URL:**
-`GET /dreamGoals`
+`GET /getDreamProduct`
 
 - **Headers:**  
   | Key             | Value             |
