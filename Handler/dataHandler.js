@@ -65,32 +65,54 @@ const saveDataHandler = async (request, h) => {
         console.log('Generated Goal ID:', goalId); // Debug Goal ID
 
         // Upload gambar ke bucket Firebase Storage
-        const bucket = admin.storage().bucket('targetted-money-saver.firebasestorage.app');
-        const fileName = `goalImages/${uid}/${goalId}.jpg`; // Nama file unik dalam folder goalImages
-        const file = bucket.file(fileName);
-
-        // Dekode base64
-        const buffer = Buffer.from(goal_image, 'base64');
+        const bucket = admin.storage().bucket('targetted-money-saver.appspot.com'); // Format nama bucket yang benar
+        const fileName = `goalImages/${uid}/${goalId}`; // Hilangkan ekstensi agar fleksibel
+        let contentType = '';
+    
+        // Deteksi tipe konten berdasarkan header Base64
+        const match = goal_image.match(/^data:(image\/\w+);base64,/);
+        if (!match) {
+            throw new Error('Invalid Base64 format');
+        }
+    
+        contentType = match[1]; // Ambil tipe konten dari Base64
+        const base64Data = goal_image.replace(/^data:image\/\w+;base64,/, '');
+        const buffer = Buffer.from(base64Data, 'base64');
+    
+        // Validasi tipe gambar yang diizinkan
+        if (!['image/jpeg', 'image/jpg', 'image/png'].includes(contentType)) {
+            throw new Error('Unsupported image type. Only JPG, JPEG, and PNG are allowed.');
+        }
+    
+        // Tentukan ekstensi file berdasarkan tipe konten
+        const extension = contentType.split('/')[1];
+        const fullFileName = `${fileName}.${extension}`;
+    
+        // File di bucket
+        const file = bucket.file(fullFileName);
+    
+        // Simpan file ke bucket Firebase Storage
         await file.save(buffer, {
             metadata: {
-                contentType: 'image/jpeg', // Pastikan tipe konten benar
+                contentType: contentType, // Gunakan contentType yang terdeteksi
             },
         });
-
-        console.log('File uploaded:', fileName);
-
+    
+        console.log('File uploaded:', fullFileName);
+    
         // URL publik gambar
-        const imageURL = `https://storage.googleapis.com/${bucket.name}/${fileName}`;
+        const imageURL = `https://storage.googleapis.com/${bucket.name}/${fullFileName}`;
         dreamGoal.goal.image = imageURL; // Tambahkan URL gambar ke dokumen
-
+    
         // Simpan data ke Firestore
         await db.collection('dreamGoals').doc(uid).collection('goals').doc(goalId).set(dreamGoal);
-
+    
         return h.response({ 
             message: 'Data saved successfully', 
             id: goalId, 
             imageURL 
         }).code(200);
+    
     } catch (error) {
         console.error('Error:', error.message);
         return h.response({ error: 'Failed to save data', details: error.message }).code(500);
