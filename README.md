@@ -44,11 +44,25 @@ Success (200):
 }
 ```
 Response:
-Error (400/500):
+Error (400)
+If required fields are missing or invalid:
 ```
 {
-    "error": "Failed to save data",
-    "details": "Error details"
+  "error": "Missing required fields"
+}
+```
+If the UID is missing:
+```
+{
+  "error": "UID is missing"
+}
+```
+Error (500)
+Server-side errors, including invalid Base64 format or unsupported image types:
+```
+{
+  "error": "Failed to save data",
+  "details": "<error_details>"
 }
 ```
 
