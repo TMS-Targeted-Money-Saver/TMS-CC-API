@@ -1,10 +1,9 @@
-# TMS-CC-API
-
-# DreamGoal API
-
-![DreamGoal Logo](assets/vbg_tms.png "DreamGoal Logo")
-
+## TMS-CC-API
 API untuk mengelola data *DreamGoal* pengguna, termasuk menyimpan, membaca, memperbarui, dan menghapus data tabungan.
+
+## Cloud Architecture
+![Cloud Architecture](assets/Screenshot%202024-12-13%20085600.png "Cloud Architecture")
+
 
 ## Base URL
 https://targetted-money-saver.et.r.appspot.com/api
