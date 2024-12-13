@@ -2,7 +2,9 @@
 
 # DreamGoal API
 
-![DreamGoal Logo](assets/vbg_tms.png "DreamGoal Logo")
+<div align="center">
+  <img src="assets/app_logo.png" alt="DreamGoal Logo" width="200"/>
+</div>
 
 API untuk mengelola data *DreamGoal* pengguna, termasuk menyimpan, membaca, memperbarui, dan menghapus data tabungan.
 
