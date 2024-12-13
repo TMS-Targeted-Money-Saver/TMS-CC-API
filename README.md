@@ -2,12 +2,14 @@
 
 # DreamGoal API
 
+![DreamGoal Logo](assets/vbg_tms.png "DreamGoal Logo")
+
 API untuk mengelola data *DreamGoal* pengguna, termasuk menyimpan, membaca, memperbarui, dan menghapus data tabungan.
 
 ## Base URL
 https://targetted-money-saver.et.r.appspot.com/api
 
-## Endpoints
+## Endpoints Documentation
 
 ### 1. **Save Data**
 Menyimpan data *DreamGoal* baru ke database.
