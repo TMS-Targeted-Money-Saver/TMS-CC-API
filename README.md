@@ -6,7 +6,7 @@ An API for managing user DreamGoal data, including saving, reading, updating, an
 
 
 ## Base URL
-https://targetted-money-saver.et.r.appspot.com/api
+http://0.0.0.0:8080/api
 
 ## Endpoints Documentation
 
