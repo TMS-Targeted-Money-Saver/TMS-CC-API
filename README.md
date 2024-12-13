@@ -1,5 +1,5 @@
 ## TMS-CC-API
-API untuk mengelola data *DreamGoal* pengguna, termasuk menyimpan, membaca, memperbarui, dan menghapus data tabungan.
+An API for managing user DreamGoal data, including saving, reading, updating, and deleting savings data.
 
 ## Cloud Architecture
 ![Cloud Architecture](assets/Screenshot%202024-12-13%20085600.png "Cloud Architecture")
